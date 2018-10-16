@@ -20,31 +20,32 @@
         weakself.image = image;
 
         [weakself handleImageFaceAware:image];
-//        [weakself handleGetImage:image error:error url:[NSURL URLWithString:weakself.origUrl]];
     }];
 }
 
 - (void)setLocalImage:(UIImage *)image cacheKey:(NSString *)key {
     self.image = image;
     
-    self.debugFaceAware = YES;
-    self.focusOnFaces = YES;
-    
     [self handleImageFaceAware:image];
-//    [self handleGetImage:image error:nil url:[NSURL URLWithString:key]];
 }
 
+
+// Use FaceAware kit to let the ImageView focusOnFace.
 - (void)handleImageFaceAware:(UIImage *)origImage {
     
+//    self.debugFaceAware = YES;
+//    self.focusOnFaces = YES;
+
     [self setImageAndFocusOnFacesWithImage:origImage];
 }
 
+/* TOTO: ml
+ * In the future，add a FaceViewTool to Cache the ImageView has FaceAwared info, Then when scroll TableView,
+ * load info from Cache. In order to scroll smoothly.
+ */
 - (void)handleGetImage:(UIImage *)image error:(NSError *)error url:(NSURL *)url {
-    
-    /* TOTO: ml
-     * In the future，add a FaceViewTool to Cache the ImageView has FaceAwared info, Then when scroll TableView,
-     * load info from Cache. In order to scroll smoothly.
-     */
+    // do something...
+
 }
 
 /*

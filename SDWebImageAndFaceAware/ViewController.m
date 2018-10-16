@@ -64,7 +64,11 @@
     _useButton = useButton;
     [self.view addSubview:useButton];
     
+    /* Use local image Or Web Image
+     * and view The memory growths status.
+     */
     [self useLocalImage];
+//    [self useWebImage];
 }
 
 - (void)clearMemory {
@@ -89,7 +93,7 @@
     }
     [_tableView reloadData];
     
-    [_useButton setTitle:@"UseLocalImage" forState:UIControlStateNormal];
+    [_useButton setTitle:@"Now, UseLocalImage" forState:UIControlStateNormal];
 }
 
 - (void)useWebImage {
@@ -113,7 +117,7 @@
     
     [_tableView reloadData];
     
-    [_useButton setTitle:@"UseWebImage" forState:UIControlStateNormal];
+    [_useButton setTitle:@"Now, UseWebImage" forState:UIControlStateNormal];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
